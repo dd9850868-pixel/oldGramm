@@ -2,18 +2,53 @@ html, body {
     margin: 0;
     padding: 0;
 }
-.img {
+
+.header-img {
    display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-bottom:5px solid red;
+    border-bottom:1px solid #c6c6c6;
 }
 img {
-    width:50px;
+   width:34px;
+    height: 34px;
     border-radius: 100px;
-    /* margin: auto; */
+} 
+section {
+    display: flex;
+    flex-direction: column;
+}
+.user-info {
+   display:flex ;
+   flex-direction: row;
+   align-items: center;
+   gap:12px;
+}
+.user-text{
+display:block;
+}
+h1 {
+    margin-bottom:0;
+     font-size: 13px;
+    font-weight: bold;
+}
+.paragraph {
+    margin-top:0;
+    font-family: Source Sans Pro;
+    font-size: 12px;
+   
+}
+.post-img{
+    /* width: 375px;
+    height: 545px; */
+    width:100%;
+    height:100%;
+    border-radius: 0;
+    margin-bottom: 10px;
     
 }
-/* .align-right {
-    margin-left:auto;
-} */
+.body {
+    display: inline-block;
+    justify-content: space-between;
+    
+}
