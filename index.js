@@ -8,7 +8,7 @@ const posts = [
         comment: "just took a few mushrooms lol",
         likes: 21
     },
-    {
+     {
         name: "Gustave Courbet",
         username: "gus1819",
         location: "Ornans, France",
@@ -16,8 +16,11 @@ const posts = [
         post: "images/post-courbet.jpg",
         comment: "i'm feelin a bit stressed tbh",
         likes: 4
-    },
-        {
+    }
+   ,
+
+
+                {
         name: "Joseph Ducreux",
         username: "jd1735",
         location: "Paris, France",
@@ -27,8 +30,8 @@ const posts = [
         likes: 152
     }
 ]
-let likeEl = document.getElementById ("like-count")
-let likeBtn = document.getElementById ("like-btn")
+let likeEl = document.getElementById ("likes-${i}")
+let likeBtn = document.getElementById ("like-btn-${i}")
 let likeBtn2 = document.getElementById ("like-btn-2")
 let likeBtn3 = document.getElementById ("like-btn-3")
 
@@ -48,14 +51,14 @@ function renderMain() {
                             <p class="paragraph" id="location" > ${posts[i].location} </p>
                         </div>
                 </div>
-                    <img id="post" class="post-img" src="${posts[i].post}">
+                    <img id="post" class="post-img" src="${posts[i].post}" alt="post image">
                         
             
                 <div class="body">
-                    <img id="like-btn" src="images/icon-heart.png">
+                    <img id="like-btn-${i}" onClick="likePost(${i})" src="images/icon-heart.png">
                     <img src="images/icon-comment.png">
                     <img src="images/icon-dm.png">
-                    <p id="likes" class="paragraph"> ${posts[i].likes}</p>
+                    <p id="likes-${i}" class="paragraph"> ${posts[i].likes}</p>
                     <p  class="paragraph" id="comment" > <strong id="username" >${posts[i].username}</strong> ${posts[i].comment} </p>
                 </div>
          </section>   
@@ -67,12 +70,25 @@ mainEl.innerHTML = main
 renderMain()
 
 
+function likePost(i){
+ posts[i].likes += 1
+     document.getElementById (`likes-${i}`).textContent = posts[i].likes
+    
+
+    currentLikeBtn = document.getElementById(`like-btn-${i}`)
+
+ currentLikeBtn.src = "images/icon-heart-red.png"
+
+    
+    
+}
 
 // likeBtn.addEventListener("click", function() {
-//      likeEl.textContent += 1
+//      likeEl.textContent = Number(likeEl.textContent) + 1
+//      likeBtn.style.color = "red"
 //     console.log("wey")
-
 // })
+// }
 // likeBtn2.addEventListener("click", function() {
 //     likeEl.textContent += 
 
